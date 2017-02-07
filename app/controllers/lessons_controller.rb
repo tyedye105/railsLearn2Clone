@@ -24,7 +24,7 @@ class LessonsController < ApplicationController
     @section = Section.find(params[:section_id])
     @lesson = Lesson.find(params[:id])
     if @lesson.update(lesson_params)
-      redirect_to section_lesson_path(@lesson)
+      redirect_to section_lesson_path(@lesson.section)
     else
       render :edit
     end
