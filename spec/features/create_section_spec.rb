@@ -15,4 +15,5 @@ describe "the creeate section process" do
     click_link "Ruby"
     expect(page).to have_content("no lessons")
   end
+
 end
