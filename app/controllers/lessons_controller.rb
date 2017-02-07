@@ -1,7 +1,7 @@
 class LessonsController < ApplicationController
   def show
     @section = Section.find(params[:section_id])
-    @lesson = Lesson.find(params[:id])
+    @lesson = Lesson.find(params[:id]) || Lesson.find_by_number(params[:number])
   end
   def new
     @section = Section.find(params[:section_id])
@@ -35,6 +35,7 @@ class LessonsController < ApplicationController
     @lesson.destroy
     redirect_to section_path(@section)
   end
+
 
   private
   def lesson_params

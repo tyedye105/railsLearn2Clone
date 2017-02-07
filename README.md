@@ -22,3 +22,9 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+  <% if @lesson.next_lesson !nil%>
+<% else %>
+<p> No more lesson in this section. </p>
+<% end %>

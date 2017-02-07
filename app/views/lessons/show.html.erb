@@ -1,4 +1,10 @@
 <h1><%= @lesson.title %></h1>
 <p><%= @lesson.content %></p>
 
+
+  <% if @lesson.next_lesson !=nil%>
+<p><%= link_to "Next Lesson", section_lesson_path(@section, @lesson.next_lesson) %></p>
+  <% else %>
+  <p> No more lesson in this section. </p>
+  <% end %>
 <p><%= link_to "Return to Section", section_path(@section)%></p>
