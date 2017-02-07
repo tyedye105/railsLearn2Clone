@@ -21,4 +21,7 @@
 <%= link_to "Delete Section", section_path(@section),
                               :data => {:confirm => "Are you sure you want to delete",
                                         :method => "delete"} %></p>
+                                        <hr>
+                                    <p><%= link_to "Add Lesson", new_section_lesson_path(@section)  %></p>
+                                        <hr>
 <p> <%= link_to "Return to Sections", sections_path %></p>
