@@ -1,5 +1,4 @@
-<h1><%= @lesson.title %></h1>
-<p><%= @lesson.content %></p>
+<h1><%= @section.name %></h1>
 
 <% if @section.lessons.any? %>
   <h4>Here are the lessons for this section:</h4>
@@ -12,13 +11,14 @@
                                     :data => {:confirm => "Are you sure?",
                                               :method => "delete"} %>
       </li>
+      <% end %>
     </ul>
 <% else %>
   <h4>There are no lessons in this section yet</h4>
 <% end %>
 
-<p><%= link_to "Edit this lesson", edit_lesson_path%></p>
-<p><%= link_to "Delete",  lesson_path(@lesson),
-                            :data => {:confirm => "Are you sure?",
-                                      :method => "delete"} %></p>
-<p><%= link_to "Return to Lessons", lessons_path%></p>
+<p> <%= link_to "Edit Section", edit_section_path %> |
+<%= link_to "Delete Section", section_path(@section),
+                              :data => {:confirm => "Are you sure you want to delete",
+                                        :method => "delete"} %></p>
+<p> <%= link_to "Return to Sections", sections_path %></p>
