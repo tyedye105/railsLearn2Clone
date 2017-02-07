@@ -1,7 +1,7 @@
 class LessonsController < ApplicationController
   def show
-    @section = Section.find(params[:id])
-    @lesson = Lesson.find(params[:section_id])
+    @section = Section.find(params[:section_id])
+    @lesson = Lesson.find(params[:id])
   end
   def new
     @section = Section.find(params[:section_id])
@@ -17,20 +17,23 @@ class LessonsController < ApplicationController
     end
   end
   def edit
+    @section = Section.find(params[:section_id])
     @lesson = Lesson.find(params[:id])
   end
   def update
+    @section = Section.find(params[:section_id])
     @lesson = Lesson.find(params[:id])
     if @lesson.update(lesson_params)
-      redirect_to lesson_path(@lesson)
+      redirect_to section_lesson_path(@lesson)
     else
       render :edit
     end
   end
   def destroy
+    @section = Section.find(params[:section_id])
     @lesson = Lesson.find(params[:id])
     @lesson.destroy
-    redirect_to lessons_path
+    redirect_to section_path(@section)
   end
 
   private
