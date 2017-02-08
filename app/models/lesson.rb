@@ -6,10 +6,11 @@ class Lesson < ActiveRecord::Base
   validates :number, :presence => true
 
   def next_lesson
-    @current_lesson = Lesson.find(id)
-    @next_lesson = Lesson.find_by_number(@current_lesson.number + 1)
+    return Lesson.find_by_number(self.number + 1)
+  end
 
-
+  def prev_lesson
+    return Lesson.find_by_number(self.number - 1)
   end
 
 end

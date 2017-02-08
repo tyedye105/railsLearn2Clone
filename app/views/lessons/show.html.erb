@@ -7,4 +7,13 @@
   <% else %>
   <p> No more lesson in this section. </p>
   <% end %>
+
+  <% if @lesson.prev_lesson !=nil%>
+  <p><%= link_to "Previous Lesson", section_lesson_path(@section, @lesson.prev_lesson) %></p>
+  <% else %>
+  <p> No more lesson in this section. </p>
+  <% end %>
+
+
+
 <p><%= link_to "Return to Section", section_path(@section)%></p>
