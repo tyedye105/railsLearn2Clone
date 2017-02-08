@@ -11,7 +11,6 @@ describe Lesson do
       test_section = Section.create({:name => "Ruby"})
       current_lesson = Lesson.create({:title => 'lesson1', :content =>'content', :number => 1, :section_id => test_section.id})
       test_lesson = Lesson.create({:title => 'lesson2', :content =>'content2', :number => 2, :section_id => test_section.id})
-      binding.pry
       expect(current_lesson.next_lesson).to eq test_lesson
     end
   end

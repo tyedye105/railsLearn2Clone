@@ -3,7 +3,7 @@
 
 
   <% if @lesson.next_lesson !=nil%>
-<p><%= link_to "Next Lesson", section_lesson_path(@section, @lesson.next_lesson) %></p>
+  <p><%= link_to "Next Lesson", section_lesson_path(@section, @lesson.next_lesson) %></p>
   <% else %>
   <p> No more lesson in this section. </p>
   <% end %>
